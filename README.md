@@ -4,7 +4,8 @@
  * [Hercules Telegram](https://t.me/HerculesNode)
  * [Hercules Twitter](https://twitter.com/Herculesnode)
  * [faucet](https://faucet.testnet.initia.xyz/)
- * [Explplorer](https://scan.testnet.initia.xyz/initiation-1)
+ * [Explorer](https://scan.testnet.initia.xyz/initiation-1)
+ * [görevler](https://initia-xyz.notion.site/The-Initiation-Validator-Tasks-6d88ab0034644473907435662f9285b3)
 
 ## 🟢 Sistem özellikleri
 | Ram | cpu     | disk                      |
