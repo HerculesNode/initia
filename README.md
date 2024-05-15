@@ -13,7 +13,6 @@
 | `4GB`      | `8Core` | `500+ SSD` |
 
 
-## 🟢 HerculesNode
 | Services | 
 | :-------- | 
 | RPC : https://initia-testnet-rpc.herculesrollap.store:443     | 
@@ -30,7 +29,7 @@ sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -
 ## 🟢 Go kuralım
 ```shell
 cd $HOME && \
-ver="1.21.3" && \
+ver="1.22.0" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
