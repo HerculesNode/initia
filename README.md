@@ -45,7 +45,10 @@ git clone https://github.com/initia-labs/initia
 cd initia
 git checkout v0.2.14
 make build
+initiad version
 ```
+![image](https://github.com/HerculesNode/initia/assets/101635385/ab01aca6-18f3-49f1-8365-40fb408c1b83)
+
 
 ```shell
 mkdir -p $HOME/.initia/cosmovisor/genesis/bin
