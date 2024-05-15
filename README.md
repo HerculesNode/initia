@@ -169,6 +169,12 @@ sudo systemctl restart initiad
 sudo journalctl -u initiad.service -f --no-hostname -o cat
 ```
 
+## 🟢 true / false log
+
+```shell
+initiad status | jq
+```
+
 ## 🟢 Cüzdan oluşturma
 - Cüzdan adını yaz
 
