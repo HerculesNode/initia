@@ -4,7 +4,7 @@
  * [Hercules Telegram](https://t.me/HerculesNode)
  * [Hercules Twitter](https://twitter.com/Herculesnode)
  * [faucet](https://faucet.testnet.initia.xyz/)
- * [Explorer](https://scan.testnet.initia.xyz/initiation-1)
+ * [ScannerX Explorer](https://explorer.scannerx.net/Initia/staking)
  * [görevler](https://initia-xyz.notion.site/The-Initiation-Validator-Tasks-6d88ab0034644473907435662f9285b3)
 
 ## 🟢 Sistem özellikleri
