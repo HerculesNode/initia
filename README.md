@@ -13,6 +13,14 @@
 | `4GB`      | `8Core` | `500+ SSD` |
 
 
+## 🟢 HerculesNode
+| Services | 
+| :-------- | 
+| RPC : https://initia-testnet-rpc.herculesrollap.store:443     | 
+| API : https://initia-testnet-api.herculesrollap.store:443     | 
+
+
+
 ## 🟢 Sistemi güncelleyelim
 ```shell
 sudo apt update && sudo apt upgrade -y
