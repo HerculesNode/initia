@@ -1,4 +1,4 @@
-### Herculesnode Scannerx Intia Guide
+### Herculesnode Scannerx Initia Guide
 
 ### Linkler
  * [Hercules Telegram](https://t.me/HerculesNode)
