@@ -153,15 +153,34 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.initia/co
 ## 🟢 Snap
 
 ```shell
-initiad tendermint unsafe-reset-all --home $HOME/.initia
-curl -o - -L http://37.120.189.81/initia_testnet/initia_snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.initia
+sudo systemctl stop initiad
+```
+```shell
+initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
+```
+```shell
+wget https://rpc-initia-testnet.trusted-point.com/latest_snapshot.tar.lz4
+```
+```shell
+lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.initia
+```
+```shell
+sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
 ```
 
 ## 🟢 Start verelim
 
 ```shell
-sudo systemctl daemon-reload
-sudo systemctl restart initiad
+sudo systemctl daemon-reload && \
+sudo systemctl enable initiad && \
+sudo systemctl restart initiad && \
+sudo journalctl -u initiad -f -o cat
+```
+
+## 🟢 Cüzdan Bakiyesi sorgulama ( Cüzdan ismini yazın )
+
+```shell
+initiad q bank balances $(initiad keys show CÜZDAN-İSMİ -a) 
 ```
 
 ## 🟢 Log
@@ -173,7 +192,7 @@ sudo journalctl -u initiad.service -f --no-hostname -o cat
 ## 🟢 true / false log
 
 ```shell
-initiad status | jq
+initiad status | jq -r .sync_info
 ```
 
 ## 🟢 Cüzdan oluşturma
@@ -227,3 +246,38 @@ initiad tx mstaking edit-validator \
 ```shell
 initiad tx mstaking delegate $(initiad keys show wallet --bech val -a)  miktar000000uinit --from wallet --gas-adjustment 1.4 --gas auto --gas-prices 0.15uinit --node=http://localhost:15657 -y
 ```
+
+## 🟢 unjail ( Cüzdan ismi yazın )
+
+```shell
+initiad tx slashing unjail --from CÜZDAN-İSMİ --gas=2000000 --fees=300000uinit -y
+```
+
+## 🟢 Aktif Validatör
+
+```shell
+initiad q mstaking validators -o json --limit=1000 \
+| jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
+| jq -r '.voting_power + " - " + .description.moniker' \
+| sort -gr | nl
+```
+
+## 🟢 İnactif validator
+
+```shell
+initiad q mstaking validators -o json --limit=1000 \
+| jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
+| jq -r '.voting_power + " - " + .description.moniker' \
+| sort -gr | nl
+```
+
+## 🟢 Nodu silin
+
+```shell
+sudo systemctl stop initiad
+sudo systemctl disable initiad
+sudo rm /etc/systemd/system/initiad.service
+rm -rf $HOME/.initia
+sudo rm /usr/local/bin/initiad
+```
+
