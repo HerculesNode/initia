@@ -253,6 +253,13 @@ initiad tx mstaking delegate $(initiad keys show wallet --bech val -a)  miktar00
 initiad tx slashing unjail --from CÜZDAN-İSMİ --gas=2000000 --fees=300000uinit -y
 ```
 
+## 🟢 Token gönderin ( 3 yer değişecek )
+
+```shell
+initiad tx bank send CÜZDAN-İSMİNİZ GÖNDERECEĞİNİZ-CÜZDAN-ADRESİ GÖNDERECEĞİN-ADETuinit --gas=2000000 --fees=300000uinit -y
+```
+
+
 ## 🟢 Aktif Validatör
 
 ```shell
@@ -262,7 +269,7 @@ initiad q mstaking validators -o json --limit=1000 \
 | sort -gr | nl
 ```
 
-## 🟢 İnactif validator
+## 🟢 İnactive validator
 
 ```shell
 initiad q mstaking validators -o json --limit=1000 \
