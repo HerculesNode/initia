@@ -6,6 +6,7 @@
  * [faucet](https://faucet.testnet.initia.xyz/)
  * [ScannerX Explorer](https://explorer.scannerx.net/Initia/staking)
  * [görevler](https://initia-xyz.notion.site/The-Initiation-Validator-Tasks-6d88ab0034644473907435662f9285b3)
+ * [Form](https://docs.google.com/forms/d/e/1FAIpQLSc09Kl6mXyZHOL12n_6IUA8MCcL6OqzTqsoZn9N8gpptoeU_Q/viewform)
 
 ## 🟢 Sistem özellikleri
 | Ram | cpu     | disk                      |
