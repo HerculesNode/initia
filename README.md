@@ -167,13 +167,23 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.initia/co
 sudo systemctl stop initiad
 ```
 ```shell
+wget https://snapshots.kjnodes.com/initia-testnet/snapshot_latest.tar.lz4 -O latest_snapshot.tar.lz4
+```
+
+```shell
+cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
+```
+
+```shell
 initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
 ```
-```shell
-wget https://rpc-initia-testnet.trusted-point.com/latest_snapshot.tar.lz4
-```
+
 ```shell
 lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.initia
+```
+
+```shell
+mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
 ```
 ```shell
 sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
