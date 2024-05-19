@@ -161,7 +161,7 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.in
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.initia/config/app.toml
 ```
 
-## 🟢 Snap
+## 🟢 Snap 1 kjnodes
 
 ```shell
 sudo systemctl stop initiad
@@ -185,6 +185,32 @@ lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.initia
 ```shell
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
 ```
+```shell
+sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
+```
+
+
+## 🟢 Snap 2 Nodeist
+
+```shell
+sudo systemctl stop initiad
+```
+```shell
+cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
+```
+
+```shell
+rm -rf $HOME/.initia/data $HOME/.initia/wasmPath
+```
+
+```shell
+curl -L https://t-ss.nodeist.net/initia/snapshot_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.initia --strip-components 2
+```
+
+```shell
+mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
+```
+
 ```shell
 sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
 ```
