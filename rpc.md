@@ -20,12 +20,11 @@ curl $RPC/status
 
 ![image](https://github.com/HerculesNode/initia/assets/101635385/fc4f6f68-8d4f-4156-bf71-66d378cdf87b)
 
-- Aşağıdaki kodu girin 127 olan yeri 0.0.0.0 olarak açık hale getirelim.
+- Aşağıdaki kodu girin 127 olan yeri 0.0.0.0 olarak açık hale getirecek.  daha sonra buradan kontrol edin .initia/config/config.toml laddr olarak aratın değiştiğini göreceksiniz. 
 
 ```shell
 sed -i 's/^laddr = "tcp:\/\/127\.0\.0\.1:/laddr = "tcp:\/\/0.0.0.0:/' $HOME/.initia/config/config.toml
 ```
-
 
 - yeniden başlatın
 
