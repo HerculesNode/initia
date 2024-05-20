@@ -47,5 +47,10 @@ curl $RPC/status
 
 
 
+- http://İP-ADRESİNİZ:15657/status? bu şekilde girin rpc detaylarını göreceksiniz. 
+
+
+
+
 
 
