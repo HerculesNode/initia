@@ -161,13 +161,13 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.in
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.initia/config/app.toml
 ```
 
-## 🟢 Snap 1 kjnodes
+## 🟢 Snap 
 
 ```shell
 sudo systemctl stop initiad
 ```
 ```shell
-wget https://snapshots.kjnodes.com/initia-testnet/snapshot_latest.tar.lz4 -O latest_snapshot.tar.lz4
+wget https://storage.crouton.digital/testnet/initia/snapshots/initia_latest.tar.lz4 -O latest_snapshot.tar.lz4
 ```
 
 ```shell
@@ -190,30 +190,12 @@ sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
 ```
 
 
-## 🟢 Snap 2 Nodeist
+## 🟢 peer
 
 ```shell
-sudo systemctl stop initiad
-```
-```shell
-cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
+PEERS="a79fb8776078dc03fdb8a22d55e68d33cd278b20@109.123.253.61:26656,f91806acfdde672985f30af68414e25b4c223ed7@62.169.26.88:26656,ba7bef1694eb050177f70f55dee90104532366db@161.97.96.72:14656,7ddb2d3848d8911d1405d2b6dda5f79e6d1bc7d6@38.242.206.219:26656,bb6b5982fcf2715461b8c3702bc1259b66f340cb@65.108.96.173:26656,ef6d348e85e3dc4a5dbab92fbc91242a3ff5b22a@95.216.66.89:26656,d348f8661e5f3d00c2b54c0dab6a3733a1faaad3@109.123.244.119:14656,060f8c89fe208e12555171b40dcaabfd382264af@95.111.240.155:15656,9797536c7b2511471135ecbccdb9243ef4ecdf64@43.134.109.184:26656,e924262b980f7d11a4dbc70b373fc7f5fa0b7d47@135.181.128.23:26656,131297aadbc57572b7377f431ad03cfbc7bfbbb5@49.12.59.182:26656,6751db6eae5829013461db8a30fca58846b309e0@84.247.169.170:26656,8053dd69b6978e7c77ed9d89e24ee13fc6244454@194.238.31.99:27656,504d4bdf202a989094f9e4ceecad65c0c677205d@49.13.136.252:26656,4e28a7763a364d25de96fa11360fe3c7aa06b065@43.155.147.147:26656" && sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.initia/config/config.toml && sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
 ```
 
-```shell
-rm -rf $HOME/.initia/data $HOME/.initia/wasmPath
-```
-
-```shell
-curl -L https://t-ss.nodeist.net/initia/snapshot_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.initia --strip-components 2
-```
-
-```shell
-mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
-```
-
-```shell
-sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
-```
 
 ## 🟢 Start verelim
 
