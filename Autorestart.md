@@ -9,7 +9,7 @@ screen -S autoinit
 nano restart_initiad.sh
 ```
 
-## Alttaki kodu içine yapıştırın. Ctrl x y deyip kaydedin.
+## Alttaki kodu içine yapıştırın. Ctrl x y deyip kaydedin.  300 yazan saniyedir kendinize göre ayarlayın 5 dk olarak ayarlanmıştır.
 
 ```
 #!/bin/bash
