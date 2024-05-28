@@ -161,13 +161,13 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.in
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.initia/config/app.toml
 ```
 
-## 🟢 Snap 
+## 🟢 Snap 390K
 
 ```shell
 sudo systemctl stop initiad
 ```
 ```shell
-wget https://storage.crouton.digital/testnet/initia/snapshots/initia_latest.tar.lz4 -O latest_snapshot.tar.lz4
+wget https://snapshots.staking4all.org/testnet-snapshots/initia/latest/initia.tar.lz4 -O latest_snapshot.tar.lz4
 ```
 
 ```shell
